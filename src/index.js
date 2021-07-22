@@ -1,12 +1,20 @@
+import './config'; // Imports environment variables and configures FCL
+
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { RecoilRoot } from 'recoil';
+
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { CurrentUserSubscription } from './hooks/current-user';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <RecoilRoot>
+      <CurrentUserSubscription />
+      <App />
+    </RecoilRoot>
   </React.StrictMode>,
   document.getElementById('root')
 );
